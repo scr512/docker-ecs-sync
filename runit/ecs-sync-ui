@@ -1,0 +1,3 @@
+#!/bin/sh
+#exec /usr/bin/java -server -Xmx1G -cp /opt/emc/ecs-sync/ecs-sync-ui.jar -Dloader.path=/opt/emc/ecs-sync org.springframework.boot.loader.PropertiesLauncher | tee /opt/emc/ecs-sync/logs/ecs-sync-ui.log
+(cd /opt/emc/ecs-sync && exec /usr/bin/java -server -Xmx1G -jar /opt/emc/ecs-sync/ecs-sync-ui.jar | tee /opt/emc/ecs-sync/logs/ecs-sync-ui.log)

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/bin/java -server -Xmx12G -XX:+UseParallelGC -XX:+HeapDumpOnOutOfMemoryError -cp /opt/emc/ecs-sync/ecs-sync.jar com.emc.ecs.sync.EcsSync --rest-only --db-connect-string "jdbc:mysql://mysql:3306/ecs_sync?user=ecssync&password=ecssync" --db-table ecssync --log-level verbose | tee /opt/emc/ecs-sync/logs/ecs-sync.log

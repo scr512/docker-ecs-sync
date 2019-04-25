@@ -1,0 +1,20 @@
+# Change settings and place in application (jar) working dir
+sync:
+    defaultDb: mySQL
+    dbDir: /opt/emc/ecs-sync/db
+    dbConnectString: jdbc:mysql://mysql:3306/ecs_sync?user=ecssync&password=ecssync&characterEncoding=UTF-8
+
+---
+grails:
+# This can be enabled to allow for email notification of jobs.
+#    mail:
+#        host: localhost
+#        port: 25
+#        username: 'foo'
+#        password: 'bar'
+#        props: [
+#            "mail.smtp.auth": true,
+#            "mail.smtp.socketFactory.port": 465,
+#            "mail.smtp.socketFactory.class": 'javax.net.ssl.SSLSocketFactory',
+#            "mail.smtp.socketFactory.fallback": false
+#        ]

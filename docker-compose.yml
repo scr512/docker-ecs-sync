@@ -1,0 +1,25 @@
+version: "2.1"
+services:
+  ecs-sync:
+    image: scr512/ecs-sync
+    hostname: ecs-sync
+    links:
+      - database:mysql
+    expose:
+      - 80
+      - 8080
+      - 9200
+    ports:
+      - 80:80
+      - 8080:8080
+      - 9200:9200
+  database:
+    image: mariadb:latest
+    hostname: ecs-sync-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: ecssyncroot
+      MYSQL_DATABASE: ecs_sync
+      #MYSQL_USER: ecs-sync
+      #MYSQL_PASSWORD: ecs-sync
+    volumes:
+      - /work/ecs-sync-mariadb:/var/lib/mysql
